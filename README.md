@@ -14,18 +14,17 @@
 
 ---
 
-## 🎬 فيديو توضيحي للتشغيل
+
+## 🎬 فيديو تجريبي للنظام
 
 <div align="center">
 
-https://github.com/user-attachments/assets/PLACEHOLDER_VIDEO_ID
+[![مشاهدة الفيديو التجريبي](https://img.youtube.com/vi/ceLbGmQIo5g/0.jpg)](https://youtu.be/ceLbGmQIo5g)
 
-<video width="800" controls>
-  <source src="output_result.mp4" type="video/mp4">
-  متصفحك لا يدعم تشغيل الفيديو.
-</video>
+*انقر على الصورة أعلاه لمشاهدة الفيديو على YouTube*
 
 </div>
+
 
 ---
 
@@ -352,3 +351,4 @@ python scripts/calibrate.py your_video.mp4
 - ✅ إنشاء فيديو الناتج مع المربعات ولوحة المعلومات
 
 </details>
+
