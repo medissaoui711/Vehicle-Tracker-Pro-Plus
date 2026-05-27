@@ -1,0 +1,53 @@
+{
+    "source": "your_traffic_video.mp4",
+    "output_video": "output_result.mp4",
+    "model_path": "yolov8n.pt",
+    "tracker": "bytetrack.yaml",
+    "confidence": 0.3,
+    "iou": 0.45,
+    "calibration": {
+        "src_points": [[300, 700], [980, 700], [600, 300], [680, 300]],
+        "dst_meters": [[0, 20], [10, 20], [0, 0], [10, 0]]
+    },
+    "speed": {
+        "min_frames": 5,
+        "smoothing_window": 5
+    },
+    "gates_config": "config/gates.json",
+    "lanes_config": "config/lanes.json",
+    "events": {
+        "speed": { "enabled": true, "limit_kmh": 60, "tolerance_percent": 5, "min_frames": 3 },
+        "wrong_way": { "enabled": true, "allowed_direction": "Away", "min_frames": 5 },
+        "tailgating": { "enabled": true, "time_gap_s": 2.0, "min_distance_m": 5.0, "same_lane_only": true },
+        "stopped_vehicle": { "enabled": true, "timeout_s": 10.0, "speed_threshold": 2.0 }
+    },
+    "density": {
+        "total_length_m": 40.0,
+        "segments_count": 4
+    },
+    "statistics": {
+        "report_interval": 150
+    },
+    "storage": {
+        "database_path": "data/traffic.db",
+        "csv_dir": "data/reports",
+        "snapshots_dir": "data/snapshots",
+        "async_writer": {
+            "enabled": true,
+            "batch_size": 50,
+            "flush_interval_s": 2.0
+        },
+        "log_vehicles_every_n_frames": 30,
+        "log_density_every_n_frames": 30,
+        "capture_snapshots_for_severities": []
+    },
+    "visualization": {
+        "show_display": true,
+        "show_dashboard": true,
+        "show_gates": false,
+        "font_scale": 0.5,
+        "thickness": 2,
+        "dashboard_position": [10, 10],
+        "dashboard_width": 320
+    }
+}

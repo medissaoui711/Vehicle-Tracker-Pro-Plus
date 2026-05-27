@@ -1,0 +1,10 @@
+{
+    "gates": [
+        {
+            "id": "gate_1",
+            "line_image": [[300, 500], [700, 500]],
+            "direction": -1,
+            "lane_id": null
+        }
+    ]
+}

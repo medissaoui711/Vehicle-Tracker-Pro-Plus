@@ -1,0 +1,13 @@
+{
+    "lanes_count": 1,
+    "lanes": [
+        {
+            "id": 0,
+            "name": "Main Lane",
+            "direction": "Away",
+            "boundary_left": [[200, 700], [300, 200]],
+            "boundary_right": [[600, 700], [600, 200]],
+            "length_m": 50.0
+        }
+    ]
+}
