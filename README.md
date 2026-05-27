@@ -6,6 +6,14 @@
 
 ---
 
+## 🎥 العرض التوضيحي
+
+[![Vehicle Tracker Pro++ Demo](https://img.youtube.com/vi/ceLbGmQIo5g/maxresdefault.jpg)](https://www.youtube.com/watch?v=ceLbGmQIo5g)
+
+> 📺 [شاهد الفيديو على YouTube](https://www.youtube.com/watch?v=ceLbGmQIo5g)
+
+---
+
 ## 📋 المميزات
 
 | الميزة | الوصف |
