@@ -1,6 +1,8 @@
 # 🚗 Vehicle Tracker Pro++
 
-### نظام تتبع مروري احترافي متعدد الطبقات
+<div align="center">
+
+**نظام تتبع مروري احترافي متعدد الطبقات**
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Ultralytics](https://img.shields.io/badge/Ultralytics-YOLOv8-purple.svg)](https://ultralytics.com/)
@@ -8,16 +10,28 @@
 [![SQLite](https://img.shields.io/badge/SQLite-3-lightblue.svg)](https://www.sqlite.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+</div>
+
+---
+
+## 🎬 فيديو توضيحي للتشغيل
+
+<div align="center">
+
+https://github.com/user-attachments/assets/PLACEHOLDER_VIDEO_ID
+
+<video width="800" controls>
+  <source src="output_result.mp4" type="video/mp4">
+  متصفحك لا يدعم تشغيل الفيديو.
+</video>
+
+</div>
+
 ---
 
 ## 📸 نظرة عامة
 
-### 🎬 فيديو توضيحي للتشغيل
-
-[![Vehicle Tracker Pro++ Demo](https://img.shields.io/badge/%F0%9F%8E%AC-%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%A9_%D9%81%D9%8A%D8%AF%D9%8A%D9%88_%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1-red?style=for-the-badge)](https://youtu.be/output_result.mp4)
-
 نظام متكامل لتتبع المركبات وتحليل الحركة المرورية باستخدام الذكاء الاصطناعي. يحول إحداثيات الكاميرا إلى قياسات حقيقية بالأمتار، ويوفر تحليلات مرورية متقدمة تشمل:
-
 - 🏎️ **قياس السرعة بالأمتار الحقيقية** عبر تحويل منظور (BEV)
 - 🚦 **بوابات افتراضية** لقياس سرعة العبور (Trap Speed)
 - ⚠️ **كشف المخالفات**: تجاوز السرعة، السير العكسي، التلاحق، التوقف الطارئ
@@ -29,7 +43,7 @@
 
 ## 🏗️ الهيكل المعماري
 
-```text
+```
 Vehicle-Tracker-Pro-Plus/
 │
 ├── 📄 config.json                  # ملف الإعدادات الرئيسي
@@ -52,7 +66,7 @@ Vehicle-Tracker-Pro-Plus/
 ├── 📂 scripts/                     # أدوات مساعدة
 │   └── calibrate.py               # أداة المعايرة التفاعلية
 │
-└── 📂 data/                        # مخرجات
+└── 📂 data/                        # مخرجات (لا ترفع لـ Git)
     ├── traffic.db                  # قاعدة البيانات
     ├── reports/                    # تقارير CSV
     └── snapshots/                  # لقطات الأحداث
@@ -63,56 +77,50 @@ Vehicle-Tracker-Pro-Plus/
 ## ✨ المميزات الرئيسية
 
 ### 🎯 التتبع والقياس
-
 | الميزة | الوصف |
 |--------|-------|
-| تحويل BEV | تحويل إحداثيات الصورة إلى أمتار حقيقية باستخدام Homography Matrix |
-| تتبع متقدم | YOLOv8 + ByteTrack مع إدارة فقدان التتبع (Occlusion) |
-| سرعة دقيقة | حساب السرعة بالأمتار/الثانية مع نافذة تجانس (Smoothing Window) |
-| اتجاه المركبة | تحديد اتجاه الحركة (مقترب/مبتعد/متوقف) |
+| **تحويل BEV** | تحويل إحداثيات الصورة إلى أمتار حقيقية باستخدام Homography Matrix |
+| **تتبع متقدم** | YOLOv8 + ByteTrack مع إدارة فقدان التتبع (Occlusion) |
+| **سرعة دقيقة** | حساب السرعة بالأمتار/الثانية مع نافذة تجانس (Smoothing Window) |
+| **اتجاه المركبة** | تحديد اتجاه الحركة (مقترب/مبتعد/متوقف) |
 
 ### 🚦 البوابات الافتراضية
-
 | الميزة | الوصف |
 |--------|-------|
-| خطوط عبور | تعريف بوابات في الإحداثيات الحقيقية |
-| Trap Speed | حساب السرعة بين أي بوابتين |
-| اتجاه العبور | فلترة حسب اتجاه الحركة المسموح |
+| **خطوط عبور** | تعريف بوابات في الإحداثيات الحقيقية |
+| **Trap Speed** | حساب السرعة بين أي بوابتين |
+| **اتجاه العبور** | فلترة حسب اتجاه الحركة المسموح |
 
 ### ⚠️ كشف الأحداث (Observer Pattern)
-
 | الكاشف | الوصف |
 |--------|-------|
-| تجاوز السرعة | مع عتبة تسامح ونافذة استقرار |
-| السير العكسي | مقارنة اتجاه المركبة بالاتجاه المسموح للحارة |
-| التلاحق | حساب المسافة والزمن بين المركبات (قاعدة الثانيتين) |
-| التوقف الطارئ | كشف المركبات المتوقفة في حارة المرور |
+| **تجاوز السرعة** | مع عتبة تسامح ونافذة استقرار |
+| **السير العكسي** | مقارنة اتجاه المركبة بالاتجاه المسموح للحارة |
+| **التلاحق** | حساب المسافة والزمن بين المركبات (قاعدة الثانيتين) |
+| **التوقف الطارئ** | كشف المركبات المتوقفة في حارة المرور |
 
 ### 📊 التحليل المروري
-
 | الميزة | الوصف |
 |--------|-------|
-| تصنيف الحارات | مع نافذة استقرار لمنع التذبذب |
-| كثافة مرورية | مركبة/كم/حارة لكل مقطع |
-| مستوى الخدمة | LoS (A-F) وفق معايير HCM |
-| إحصائيات | تقارير دورية وإحصائيات تراكمية |
+| **تصنيف الحارات** | مع نافذة استقرار لمنع التذبذب |
+| **كثافة مرورية** | مركبة/كم/حارة لكل مقطع |
+| **مستوى الخدمة** | LoS (A-F) وفق معايير HCM |
+| **إحصائيات** | تقارير دورية وإحصائيات تراكمية |
 
 ### 💾 التخزين
-
 | الميزة | الوصف |
 |--------|-------|
-| SQLite | 6 جداول (sessions, vehicles, events, density, statistics) |
-| Async Writer | طابور + خيط منفصل لمنع حظر المعالجة |
-| Batching | تجميع السجلات وكتابتها دفعة واحدة |
-| CSV Export | تصدير تلقائي للتقارير اليومية |
-| لقطات الأحداث | حفظ صور تلقائية للمخالفات الحرجة |
+| **SQLite** | 6 جداول (sessions, vehicles, events, density, statistics) |
+| **Async Writer** | طابور + خيط منفصل لمنع حظر المعالجة |
+| **Batching** | تجميع السجلات وكتابتها دفعة واحدة |
+| **CSV Export** | تصدير تلقائي للتقارير اليومية |
+| **لقطات الأحداث** | حفظ صور تلقائية للمخالفات الحرجة |
 
 ---
 
 ## 🚀 التثبيت والتشغيل
 
 ### المتطلبات الأساسية
-
 - Python 3.8+
 - pip (مدير حزم Python)
 
@@ -162,8 +170,7 @@ python src/main.py --config my_config.json
 python scripts/calibrate.py your_video.mp4
 ```
 
-### تعليمات
-
+**تعليمات:**
 1. انقر على 4 نقاط على الشارع بالترتيب:
    - **النقطة 1**: أسفل-يسار الشارع (قريب من الكاميرا)
    - **النقطة 2**: أسفل-يمين الشارع (قريب من الكاميرا)
@@ -180,33 +187,33 @@ python scripts/calibrate.py your_video.mp4
 
 ```json
 {
-    "source": "video.mp4",
-    "output_video": null,
-    "model_path": "yolov8n.pt",
-    "confidence": 0.3,
-    "iou": 0.45,
-
+    "source": "video.mp4",        // مصدر الفيديو أو "0" للكاميرا أو "rtsp://..."
+    "output_video": null,         // مسار حفظ الفيديو الناتج (null للإلغاء)
+    "model_path": "yolov8n.pt",   // نموذج YOLO (n/s/m/l/x)
+    "confidence": 0.3,            // حد الثقة للكشف
+    "iou": 0.45,                  // حد IOU للتتبع
+    
     "calibration": {
-        "src_points": [[...]],
-        "dst_meters": [[...]]
+        "src_points": [...],      // نقاط الشارع في الصورة (4 نقاط)
+        "dst_meters": [...]       // النقاط المقابلة بالأمتار
     },
-
+    
     "events": {
         "speed": { "enabled": true, "limit_kmh": 60 },
         "wrong_way": { "enabled": true },
         "tailgating": { "enabled": true, "time_gap_s": 2.0 },
         "stopped_vehicle": { "enabled": true, "timeout_s": 10.0 }
     },
-
+    
     "storage": {
         "database_path": "data/traffic.db",
-        "async_writer": { "enabled": true }
+        "async_writer": { "enabled": true }  // كتابة غير متزامنة
     },
-
+    
     "visualization": {
-        "show_display": true,
-        "show_dashboard": true,
-        "show_gates": true
+        "show_display": true,      // عرض النافذة
+        "show_dashboard": true,    // عرض لوحة المعلومات
+        "show_gates": true         // عرض البوابات
     }
 }
 ```
@@ -216,7 +223,6 @@ python scripts/calibrate.py your_video.mp4
 ## 📊 نموذج قاعدة البيانات (Schema)
 
 ### جدول sessions
-
 | العمود | النوع | الوصف |
 |--------|------|-------|
 | id | INTEGER | معرف الجلسة |
@@ -226,7 +232,6 @@ python scripts/calibrate.py your_video.mp4
 | total_events | INTEGER | إجمالي الأحداث |
 
 ### جدول vehicles
-
 | العمود | النوع | الوصف |
 |--------|------|-------|
 | track_id | INTEGER | معرف التتبع |
@@ -236,7 +241,6 @@ python scripts/calibrate.py your_video.mp4
 | lane_id | INTEGER | رقم الحارة |
 
 ### جدول events
-
 | العمود | النوع | الوصف |
 |--------|------|-------|
 | event_type | TEXT | نوع الحدث |
@@ -244,7 +248,6 @@ python scripts/calibrate.py your_video.mp4
 | details_json | TEXT | تفاصيل JSON |
 
 ### جدول density
-
 | العمود | النوع | الوصف |
 |--------|------|-------|
 | lane_id | INTEGER | رقم الحارة |
@@ -254,16 +257,9 @@ python scripts/calibrate.py your_video.mp4
 
 ---
 
-## ⌨️ مفاتيح التحكم أثناء التشغيل
-
-| المفتاح | الوظيفة |
-|---------|----------|
-| `q` | إيقاف المعالجة والخروج |
-| `ESC` | إيقاف المعالجة والخروج |
-
----
-
 ## 📈 نتائج اختبار حقيقي
+
+<div align="center">
 
 | المؤشر | القيمة |
 |--------|--------|
@@ -275,21 +271,7 @@ python scripts/calibrate.py your_video.mp4
 | 📈 متوسط FPS معالجة | 13.0 |
 | 💾 حالة التخزين | ✅ ناجح |
 
----
-
-## 🎨 لقطات من النظام
-
-![لوحة المعلومات](screenshots/dashboard.png)
-
-*لوحة المعلومات المباشرة على الفيديو مع مستويات الخدمة (LoS)*
-
-![كشف الأحداث](screenshots/events.png)
-
-*كشف السير العكسي وتجاوز السرعة مع تنبيهات فورية*
-
-![البوابات الافتراضية](screenshots/gates.png)
-
-*البوابات الافتراضية لقياس Trap Speed بين نقطتين*
+</div>
 
 ---
 
@@ -337,18 +319,22 @@ python scripts/calibrate.py your_video.mp4
 ## 📧 الاتصال
 
 - GitHub: [@medissaoui711](https://github.com/medissaoui711)
-- البريد الإلكتروني: <contacteinfo71@gmail.com>
+- البريد الإلكتروني: contacteinfo71@gmail.com
 
 ---
 
-### ⭐ إذا أعجبك المشروع، لا تنسَ إضافة نجمة على GitHub! ⭐
+<div align="center">
+
+**⭐ إذا أعجبك المشروع، لا تنسَ إضافة نجمة على GitHub! ⭐**
+
+</div>
 
 ---
 
-## 📝 ملخص المحادثة (Conversation Summary)
+<details>
+<summary>📝 ملخص المحادثة (Conversation Summary)</summary>
 
 ### مراحل بناء المشروع
-
 1. **النواة والمعايرة**: Vehicle, YOLOTracker, VehicleManager, BEVTransformer
 2. **البوابات الافتراضية**: VirtualGate, GateManager, Trap Speed
 3. **الأحداث (Observer)**: SpeedViolation, WrongWay, Tailgating, StoppedVehicle
@@ -358,10 +344,11 @@ python scripts/calibrate.py your_video.mp4
 7. **الدمج النهائي**: main.py مع 9 مراحل معالجة
 
 ### نتائج الاختبار العملي
-
 - ✅ معالجة 416 إطار من فيديو 1280×720
 - ✅ اكتشاف 10 مركبات فريدة
 - ✅ تسجيل 9 عبورات للبوابات
 - ✅ أقصى سرعة: 20.1 km/h
 - ✅ تخزين البيانات في SQLite + CSV
 - ✅ إنشاء فيديو الناتج مع المربعات ولوحة المعلومات
+
+</details>
